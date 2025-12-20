@@ -15,7 +15,7 @@ export const weddingConfig = {
   meta: {
     title: "신랑 ❤️ 신부의 결혼식에 초대합니다",
     description: "결혼식 초대장",
-    ogImage: "/images/ha0h-1fsi-bqt3.jpg",
+    ogImage: "/images/jeju.jpg",
     noIndex: true,
     _jwk_watermark_id: uniqueIdentifier,
   },
@@ -23,7 +23,7 @@ export const weddingConfig = {
   // 메인 화면
   main: {
     title: "Wedding Invitation",
-    image: "/images/ha0h-1fsi-bqt3.jpg",
+    image: "/images/jeju.jpg", //"/images/ha0h-1fsi-bqt3.jpg",
     date: "2026년 5월 16일 토요일 12시 30분",
     venue: "웨딩홀 이름"
   },
