@@ -37,19 +37,19 @@ export const weddingConfig = {
   // 결혼식 일정
   date: {
     year: 2026,
-    month: 5,
-    day: 16,
-    hour: 12,
-    minute: 30,
-    displayDate: "2026.05.16 SAT PM 12:30",
+    month: 1,
+    day: 25,
+    hour: 10,
+    minute: 50,
+    displayDate: "2026.01.25. SUN AM 10:50",
   },
 
   // 장소 정보
   venue: {
     name: "루이비스컨벤션 대전 그레이스홀",
-    address: "서울특별시 강남구 테헤란로 123\n웨딩홀 이름",
-    tel: "02-1234-5678",
-    naverMapId: "웨딩홀 이름", // 네이버 지도 검색용 장소명
+    address: "대전광역시 유성구 테크노중앙로 161\nSKY 호텔 1층(용산동 579번지)",
+    tel: "042-933-2500",
+    naverMapId: "루이비스컨벤션 대전", // 네이버 지도 검색용 장소명
     coordinates: {
       latitude: 37.5665,
       longitude: 126.9780,
@@ -84,7 +84,7 @@ export const weddingConfig = {
 
   // 갤러리
   gallery: {
-    layout: "grid" as GalleryLayout, // "scroll" 또는 "grid" 선택
+    layout: "scroll" as GalleryLayout, // "scroll" 또는 "grid" 선택
     position: "bottom" as GalleryPosition, // "middle" (현재 위치) 또는 "bottom" (맨 하단) 선택
     images: [
       "/images/gallery/image1.jpg",
@@ -101,7 +101,7 @@ export const weddingConfig = {
 
   // 초대의 말씀
   invitation: {
-    message: "한 줄기 별빛이 되어 만난 인연\n평생을 함께 걸어가려 합니다.\n\n소중한 분들의 축복 속에\n저희 두 사람이 첫 걸음을 내딛습니다.\n\n귀한 시간 내어 함께해 주신다면\n그 어떤 축복보다 값진 선물이 될 것입니다.",
+    message: "서로 앞에\n책이 되는 순간이 있었어요.\n그 무엇과도 바꿀 수 없는 한 권인 책인 내가\n서로를 스치지 않고\n사랑으로 머물러\n마지막 페이지까지 읽어보려 합니다.\n\n준휘를 만나기까지\n지연된 결혼식에\n여러분을 초대합니다.",
     groom: {
       name: "신랑이름",
       label: "아들",
