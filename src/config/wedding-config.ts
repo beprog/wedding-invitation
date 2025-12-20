@@ -59,7 +59,7 @@ export const weddingConfig = {
     mapNaverCoordinates: "14141300,4507203,15,0,0,0,dh", // 네이버 지도 길찾기 URL용 좌표 파라미터 (구 형식)
     transportation: {
       subway: "지하철역 1번 출구에서 도보 5분",
-      bus: "간선\n 101, 102, 103\n지선\n 1234, 5678",
+      car: "서울기준: 경부고속도로 → 회덕IC 분기점 → 북대전IC\n : 경부고속도로 → 신탄진IC",
     },
     parking: "건물 지하 주차장 이용 가능 (2시간 무료)",
     // 신랑측 배차 안내
