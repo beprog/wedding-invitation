@@ -46,7 +46,7 @@ export const weddingConfig = {
 
   // 장소 정보
   venue: {
-    name: "웨딩홀 이름",
+    name: "루이비스컨벤션 대전 그레이스홀",
     address: "서울특별시 강남구 테헤란로 123\n웨딩홀 이름",
     tel: "02-1234-5678",
     naverMapId: "웨딩홀 이름", // 네이버 지도 검색용 장소명
