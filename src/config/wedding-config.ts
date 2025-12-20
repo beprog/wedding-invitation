@@ -51,8 +51,8 @@ export const weddingConfig = {
     tel: "042-933-2500",
     naverMapId: "루이비스컨벤션 대전", // 네이버 지도 검색용 장소명
     coordinates: {
-      latitude: 37.5665,
-      longitude: 126.9780,
+      latitude: 36.4247,
+      longitude: 127.3983,
     },
     placeId: "123456789", // 네이버 지도 장소 ID
     mapZoom: "17", // 지도 줌 레벨
@@ -103,16 +103,16 @@ export const weddingConfig = {
   invitation: {
     message: "서로 앞에\n책이 되는 순간이 있었어요.\n그 무엇과도 바꿀 수 없는 한 권인 책인 내가\n서로를 스치지 않고\n사랑으로 머물러\n마지막 페이지까지 읽어보려 합니다.\n\n준휘를 만나기까지\n지연된 결혼식에\n여러분을 초대합니다.",
     groom: {
-      name: "신랑이름",
+      name: "준휘",
       label: "아들",
-      father: "신랑아버지",
-      mother: "신랑어머니",
+      father: "이진홍",
+      mother: "서일선",
     },
     bride: {
-      name: "신부이름",
+      name: "지연",
       label: "딸",
-      father: "신부아버지",
-      mother: "신부어머니",
+      father: "故 류근문",
+      mother: "조성숙",
     },
   },
 
