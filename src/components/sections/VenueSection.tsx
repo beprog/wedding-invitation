@@ -241,8 +241,8 @@ const VenueSection = ({ bgColor = 'white' }: VenueSectionProps) => {
       <TransportCard>
         <CardTitle>대중교통 안내</CardTitle>
         <TransportItem>
-          <TransportLabel>지하철</TransportLabel>
-          <TransportText>{weddingConfig.venue.transportation.subway}</TransportText>
+          <TransportLabel>버스</TransportLabel>
+          <TransportText>{weddingConfig.venue.transportation.bus}</TransportText>
         </TransportItem>
         <TransportItem>
           <TransportLabel>자가용</TransportLabel>
