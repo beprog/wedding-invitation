@@ -23,15 +23,15 @@ export const weddingConfig = {
   // 메인 화면
   main: {
     title: "Wedding Invitation",
-    image: "/images/jeju.jpg", //"/images/ha0h-1fsi-bqt3.jpg",
-    date: "2026년 5월 16일 토요일 12시 30분",
-    venue: "웨딩홀 이름"
+    image: "/images/jeju.jpg",
+    date: "2026년 1월 25일 일요일 10시 50분",
+    venue: "루이비스컨벤션 대전 그레이스홀"
   },
 
   // 소개글
   intro: {
     title: "",
-    text: "서로를 바라보며 걸어온\n소중한 발걸음이\n이제 하나의 길로 이어집니다.\n\n사랑과 믿음으로\n새 가정을 이루는 저희 두 사람의\n작은 시작을 알려드립니다."
+    text: "서로 앞에\n책이 되는 순간이 있었어요.\n그 무엇과도 바꿀 수 없는 한 권인 책인 내가\n서로를 스치지 않고\n사랑으로 머물러\n마지막 페이지까지 읽어보려 합니다.\n\n준휘를 만나기까지\n지연된 결혼식에\n여러분을 초대합니다."
   },
 
   // 결혼식 일정
