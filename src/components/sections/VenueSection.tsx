@@ -11,7 +11,7 @@ declare global {
   }
 }
 
-// 텍스트의 \n을 <br />로 변환하는 함수
+// 텍스트의 \n을 <br />로 변환하는 함수 
 const formatTextWithLineBreaks = (text: string) => {
   return text.split('\n').map((line, index) => (
     <React.Fragment key={index}>
@@ -253,7 +253,7 @@ const VenueSection = ({ bgColor = 'white' }: VenueSectionProps) => {
       <ParkingCard>
         <CardTitle>주차 안내</CardTitle>
         <TransportText>{weddingConfig.venue.parking}</TransportText>
-      </ParkingCard>
+      </ParkingCard> 
       
       {/* 신랑측 배차 안내 - 정보가 있을 때만 표시 */}
       {/* 신부측 배차 안내 - 정보가 있을 때만 표시 */}
