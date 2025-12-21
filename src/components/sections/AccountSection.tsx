@@ -17,8 +17,6 @@ const AccountSection = ({ bgColor = 'white' }: AccountSectionProps) => {
     groom: false,
     bride: false,
     groomFather: false,
-    groomMother: false,
-    brideFather: false,
     brideMother: false,
   });
   
@@ -96,10 +94,6 @@ const AccountSection = ({ bgColor = 'white' }: AccountSectionProps) => {
         return weddingConfig.invitation.bride.name;
       case 'groomFather':
         return weddingConfig.invitation.groom.father;
-      case 'groomMother':
-        return weddingConfig.invitation.groom.mother;
-      case 'brideFather':
-        return weddingConfig.invitation.bride.father;
       case 'brideMother':
         return weddingConfig.invitation.bride.mother;
       default:
