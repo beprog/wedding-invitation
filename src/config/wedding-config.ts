@@ -101,17 +101,17 @@ export const weddingConfig = {
   account: {
     groom: {
       bank: "하나은행",
-      number: "3539-1028-771307",
+      number: "35391028771307",
       holder: "이준휘",
     },
     bride: {
       bank: "하나은행",
-      number: "6549-1035-951107",
+      number: "65491035951107",
       holder: "류지연",
     },
     groomFather: {
       bank: "부산은행",
-      number: "064-12-0510784",
+      number: "064120510784",
       holder: "이진홍",
     },
     brideMother: {
