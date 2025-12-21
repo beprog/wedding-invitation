@@ -46,7 +46,7 @@ export const weddingConfig = {
 
   // 장소 정보
   venue: {
-    name: "루이비스컨벤션 대전 그레이스홀",
+    name: "루이비스컨벤션",
     address: "대전 유성구 테크노중앙로 161 스카이파크호텔 1층",
     tel: "042-933-2500",
     naverMapId: "루이비스컨벤션", // 네이버 지도 검색용 장소명
