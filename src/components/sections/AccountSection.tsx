@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { weddingConfig } from '../../config/wedding-config';
 import { AccountInfo } from '../../types/wedding';
 
-type AccountPerson = 'groom' | 'bride' | 'groomFather' | 'groomMother' | 'brideFather' | 'brideMother';
+type AccountPerson = 'groom' | 'bride' | 'groomFather' | 'brideMother';
 type AccountSide = 'groom' | 'bride';
 
 interface AccountSectionProps {
