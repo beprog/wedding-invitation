@@ -14,7 +14,7 @@ export const weddingConfig = {
   // 메타 정보
   meta: {
     title: "이준휘❤️류지연의 결혼식에 초대합니다",
-    description: "결혼식 초대장",
+    description: "모바일 청첩장",
     ogImage: "/images/jeju.jpg",
     noIndex: true,
     _jwk_watermark_id: uniqueIdentifier,
@@ -55,13 +55,13 @@ export const weddingConfig = {
       longitude: 127.3983,
     },
     placeId: "1354062290", // 네이버 지도 장소 ID
-    mapZoom: "17", // 지도 줌 레벨
+    mapZoom: "15", // 지도 줌 레벨
     mapNaverCoordinates: "14181866.66,4359231.50,15,0,0,0,dh", // 네이버 지도 길찾기 URL용 좌표 파라미터 (구 형식)
     transportation: {
       bus: "신탄진역 705번 → 현대아울렛북문 하차 → 도보5분\n대전역&대전복합터미널 701번 → 대덕밸리용신교 하차 → 도보5분\n유성시외버스터미널 704번 → 롯데마트 대덕점 하차 → 도보15분",
       car: "서울기준: 경부고속도로 → 회덕IC 분기점 → 북대전IC\n        : 경부고속도로 → 신탄진IC\대구기준: 경부고속도로 → 회덕IC 분기점 → 북대전IC\n부산기준: 중앙고속도로 → 경부고속도로 → 회덕IC 분기점 → 북대전IC ",
     },
-    parking: "호텔&컨벤션(지상), 현대아울렛 북문(지하&주차타워), 남문(지상,지하)\n* 2시간 무료주차: 출차시 주차요원에게 하객이라고 말씀해주세요.\n외부주차장(무료) → 대덕비즈센터 주차 후 셔틀버스 이용, 상시 운행\n* 외부주차장: 대덕 유성구 테크노4로 17 대덕비즈센터",
+    parking: "호텔&컨벤션(지상), 현대아울렛 북문(지하&주차타워), 남문(지상,지하)\n* 2시간 무료주차: 출차시 주차요원에게 하객이라고 말씀해주세요.\n\n외부주차장(무료) → 대덕비즈센터 주차 후 셔틀버스 이용, 상시 운행\n* 외부주차장: 대덕 유성구 테크노4로 17 대덕비즈센터",
     // 신랑측 배차 안내
     // 신부측 배차 안내
   },
@@ -71,6 +71,9 @@ export const weddingConfig = {
     layout: "scroll" as GalleryLayout, // "scroll" 또는 "grid" 선택
     position: "bottom" as GalleryPosition, // "middle" (현재 위치) 또는 "bottom" (맨 하단) 선택
     images: [
+      "/images/gallery/0-6.7M.forest.jpg",
+      "/images/gallery/0-1.5M.forest.jpg",
+      "/images/gallery/0-0.8M.forest.jpg",
       "/images/gallery/1.shoes.jpg",
       "/images/gallery/2.chocolate.jpg",
       "/images/gallery/3.flower.jpg",
