@@ -100,29 +100,19 @@ export const weddingConfig = {
   // 계좌번호
   account: {
     groom: {
-      bank: "은행명",
-      number: "123-456-789012",
-      holder: "신랑이름",
+      bank: "하나은행",
+      number: "3539-1028-771307",
+      holder: "이준휘",
     },
     bride: {
-      bank: "은행명",
-      number: "987-654-321098",
-      holder: "신부이름",
+      bank: "하나은행",
+      number: "6549-1035-951107",
+      holder: "류지연",
     },
     groomFather: {
-      bank: "은행명",
-      number: "111-222-333444",
-      holder: "신랑아버지",
-    },
-    groomMother: {
-      bank: "은행명",
-      number: "555-666-777888",
-      holder: "신랑어머니",
-    },
-    brideFather: {
-      bank: "은행명",
-      number: "999-000-111222",
-      holder: "신부아버지",
+      bank: "부산은행",
+      number: "064-12-0510784",
+      holder: "이진홍",
     },
     brideMother: {
       bank: "은행명",
@@ -133,7 +123,7 @@ export const weddingConfig = {
 
   // RSVP 설정
   rsvp: {
-    enabled: false, // RSVP 섹션 표시 여부
+    enabled: true, // RSVP 섹션 표시 여부
     showMealOption: false, // 식사 여부 입력 옵션 표시 여부
   },
 
