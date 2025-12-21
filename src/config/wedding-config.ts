@@ -13,7 +13,7 @@ interface GalleryConfig {
 export const weddingConfig = {
   // 메타 정보
   meta: {
-    title: "이준휘❤️류지연의 결혼식에 초대합니다",
+    title: "이준휘❤️류지연 결혼합니다",
     description: "모바일 청첩장",
     ogImage: "/images/jeju.jpg",
     noIndex: true,
@@ -23,7 +23,7 @@ export const weddingConfig = {
   // 메인 화면
   main: {
     title: "Wedding Invitation",
-    image: "/images/jeju.jpg",
+    image: "/images/invitation-paper.png",
     date: "2026년 1월 25일 일요일 10시 50분",
     venue: "루이비스컨벤션 대전 그레이스홀"
   },
