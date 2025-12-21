@@ -123,7 +123,7 @@ export const weddingConfig = {
 
   // RSVP 설정
   rsvp: {
-    enabled: true, // RSVP 섹션 표시 여부
+    enabled: false, // RSVP 섹션 표시 여부
     showMealOption: false, // 식사 여부 입력 옵션 표시 여부
   },
 
