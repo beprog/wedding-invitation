@@ -15,7 +15,7 @@ export const weddingConfig = {
   meta: {
     title: "이준휘❤️류지연 결혼합니다",
     description: "모바일 청첩장",
-    ogImage: "/images/invitation-intro.gif",
+    ogImage: "/images/invitation-paper.png",
     noIndex: true,
     _jwk_watermark_id: uniqueIdentifier,
   },
@@ -23,7 +23,7 @@ export const weddingConfig = {
   // 메인 화면
   main: {
     title: "Wedding Invitation",
-    image: "/images/invitation-paper.png",
+    image: "/images/invitation-intro.gif",
     date: "2026년 1월 25일 일요일 10시 50분",
     venue: "루이비스컨벤션 대전 그레이스홀"
   },
