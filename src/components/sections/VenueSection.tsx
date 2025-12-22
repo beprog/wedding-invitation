@@ -239,7 +239,7 @@ const VenueSection = ({ bgColor = 'white' }: VenueSectionProps) => {
       </NavigateButtonsContainer>
       
       <TransportCard>
-        <CardTitle>대중교통 안내</CardTitle>
+        <CardTitle>예식장 오시는 방법</CardTitle>
         <TransportItem>
           <TransportLabel>버스</TransportLabel>
           <TransportText>{weddingConfig.venue.transportation.bus}</TransportText>
