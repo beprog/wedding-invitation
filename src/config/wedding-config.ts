@@ -15,7 +15,7 @@ export const weddingConfig = {
   meta: {
     title: "이준휘❤️류지연 결혼합니다",
     description: "모바일 청첩장",
-    ogImage: "/images/jeju.jpg",
+    ogImage: "/images/invitation-intro.gif",
     noIndex: true,
     _jwk_watermark_id: uniqueIdentifier,
   },
