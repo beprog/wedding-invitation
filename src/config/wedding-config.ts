@@ -23,7 +23,7 @@ export const weddingConfig = {
   // 메인 화면
   main: {
     title: "Wedding Invitation",
-    image: "/images/invitation-intro.gif",
+    image: "/images/mochung-intro.gif",
     date: "2026년 1월 25일 일요일 10시 50분",
     venue: "루이비스컨벤션 대전 그레이스홀"
   },
