@@ -13,7 +13,7 @@ interface GalleryConfig {
 export const weddingConfig = {
   // 메타 정보
   meta: {
-    title: "이준휘❤️류지연 결혼합니다",
+    title: "이준휘❤️류지연 결혼합니다!",
     description: "모바일 청첩장",
     ogImage: "/images/invitation-paper.png",
     noIndex: true,
@@ -72,11 +72,10 @@ export const weddingConfig = {
     position: "bottom" as GalleryPosition, // "middle" (현재 위치) 또는 "bottom" (맨 하단) 선택
     images: [
       "/images/gallery/1.forest_800px.jpg",
-      "/images/gallery/2.chocolate.jpg",
-      "/images/gallery/3.flower.jpg",
-      "/images/gallery/4.rounge.jpg",
-      "/images/gallery/5.eggtart.jpg",
-      "/images/gallery/6.portuhill.jpg",
+      "/images/gallery/2.kiss_800px.jpg",
+      "/images/gallery/3.laughter_800px.jpg",
+      "/images/gallery/4.fireworks_800px.jpg",
+      "/images/gallery/5.portuhill.jpg",
     ],
   } as GalleryConfig,
 
