@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { weddingConfig } from '../../config/wedding-config';
 import { AccountInfo } from '../../types/wedding';
 
-type AccountPerson = 'groom' | 'bride' | 'groomFather' | 'brideMother';
+type AccountPerson = 'groom' | 'bride' | 'groomFather' | 'groomMother' | 'brideMother';
 type AccountSide = 'groom' | 'bride';
 
 interface AccountSectionProps {
@@ -17,6 +17,7 @@ const AccountSection = ({ bgColor = 'white' }: AccountSectionProps) => {
     groom: false,
     bride: false,
     groomFather: false,
+    groomMother: false,
     brideMother: false,
   });
   
@@ -94,6 +95,8 @@ const AccountSection = ({ bgColor = 'white' }: AccountSectionProps) => {
         return weddingConfig.invitation.bride.name;
       case 'groomFather':
         return weddingConfig.invitation.groom.father;
+      case 'groomMother':
+        return weddingConfig.invitation.groom.mother;
       case 'brideMother':
         return weddingConfig.invitation.bride.mother;
       default:
@@ -155,6 +158,7 @@ const AccountSection = ({ bgColor = 'white' }: AccountSectionProps) => {
             <AccountRowsContainer>
               {renderAccountRow(weddingConfig.account.groom, 'groom', '신랑')}
               {renderAccountRow(weddingConfig.account.groomFather, 'groomFather', '아버지')}
+              {renderAccountRow(weddingConfig.account.groomMother, 'groomMother', '어머니')}
             </AccountRowsContainer>
           )}
         </AccountCard>
