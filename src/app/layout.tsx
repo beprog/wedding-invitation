@@ -35,6 +35,10 @@ export default function RootLayout({
         <meta name="description" content={metaDescription} />
       </head>
       <body>
+        <audio controls>
+          <source src={weddingConfig.main.music} type="audio/mpeg">
+          브라우저가 오디오 태그를 지원하지 않습니다.
+        </audio>
         <GlobalStyle />
         <CacheManager />
         {}
