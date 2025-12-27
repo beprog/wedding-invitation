@@ -81,11 +81,6 @@ const MainSection: React.FC = () => {
       <Overlay />
 
       <PlayerWrapper>
-        <TrackInfo>
-          <h3>Summer Breeze.mp3</h3>
-          <p>Lo-fi Hip Hop</p>
-        </TrackInfo>
-
         <audio
           ref={audioRef}
           src={weddingConfig.main.music}
