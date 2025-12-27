@@ -364,7 +364,7 @@ const GallerySection = ({ bgColor = 'white' }: GallerySectionProps) => {
                 src={expandedImage}
                 alt="확대된 웨딩 갤러리 이미지"
                 fill
-                sizes="100vw"
+                sizes="90vw"
                 quality={90}
                 style={{ objectFit: 'contain', background: 'transparent' }}
                 draggable={false}
