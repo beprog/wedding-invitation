@@ -21,11 +21,11 @@ const MainSection = () => {
         style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
       />
 
-      <S.PlayerWrapper>
-        <S.TrackInfo>
+      <PlayerWrapper>
+        <TrackInfo>
           <h3>Summer Breeze.mp3</h3>
           <p>Lo-fi Hip Hop</p>
-        </S.TrackInfo>
+        <TrackInfo>
 
         <audio
           ref={audioRef}
@@ -35,22 +35,22 @@ const MainSection = () => {
           autoPlay // HTML 속성상의 자동실행
         />
 
-        <S.ProgressBarContainer>
-          <S.ProgressLine $width={progress} />
-        </S.ProgressBarContainer>
+        <ProgressBarContainer>
+          <ProgressLine $width={progress} />
+        </ProgressBarContainer>
 
-        <S.Controls>
-          <S.PlayButton onClick={togglePlay}>
+        <Controls>
+          <PlayButton onClick={togglePlay}>
             {isPlaying ? '⏸' : '▶'}
-          </S.PlayButton>
-          <S.VolumeSlider 
+          </PlayButton>
+          <VolumeSlider 
             type="range" min="0" max="1" step="0.01" 
             onChange={(e) => {
               if (audioRef.current) audioRef.current.volume = Number(e.target.value);
             }}
           />
-        </S.Controls>
-      </S.PlayerWrapper>
+        </Controls>
+      </PlayerWrapper>
 
       <Overlay />
       <MainContent>
