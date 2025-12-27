@@ -70,8 +70,8 @@ const MainSection: React.FC = () => {
           }}
         />
         <Controls>
-          <PlayButton onClick={togglePlay}>
-            {isPlaying ? '⏸' : '▶'}
+          <PlayButton onClick={togglePlay} $isPlaying={isPlaying}>
+            {isPlaying ? '■' : '▶'}
           </PlayButton>
         </Controls>
       </PlayerWrapper>
