@@ -140,6 +140,7 @@ const PlayerWrapper = styled.div`
   padding: 1.5rem;
   color: white;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 `;
 
 const TrackInfo = styled.div`
