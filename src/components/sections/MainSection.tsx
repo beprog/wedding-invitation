@@ -124,14 +124,25 @@ const BackgroundImage = styled(Image)`
 
 /* 추가 시작 */
 const PlayerWrapper = styled.div`
-  width: 100%;
-  max-width: 400px;
-  background: #282828;
-  border-radius: 12px;
-  padding: 1.5rem;
-  color: white;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  
+  /* 유리창 효과 (Glassmorphism) */
+  background: rgba(255, 255, 255, 0.6); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: auto;
+  min-width: 140px;
 `;
 
 const Controls = styled.div`
@@ -140,15 +151,26 @@ const Controls = styled.div`
   justify-content: space-between;
 `;
 
-const PlayButton = styled.button`
-  background: white;
-  border: none;
+const PlayButton = styled.button<{ $isPlaying: boolean }>`
+width: 32px;
+  height: 32px;
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  font-weight: bold;
+  border: none;
+  background: #333; /* 다크한 포인트 */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  &:hover { transform: scale(1.05); }
+  font-size: 14px;
+  transition: all 0.2s ease;
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  /* 재생 중일 때의 아이콘 색상 변경 제안 */
+  background: ${props => props.$isPlaying ? '#007AFF' : '#333'};
 `;
 
 const Content = styled.main`
