@@ -125,8 +125,8 @@ const BackgroundImage = styled(Image)`
 /* 추가 시작 */
 const PlayerWrapper = styled.div`
   position: fixed;
-  top: 16px;
-  right: 16px;
+  top: 12px;
+  right: 12px;
   z-index: 1000;
   display: flex;
   align-items: center;
