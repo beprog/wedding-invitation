@@ -64,7 +64,6 @@ const MainSection: React.FC = () => {
         <audio
           ref={audioRef}
           src={weddingConfig.main.music}
-          onTimeUpdate={onTimeUpdate}
           onEnded={() => {
             setIsPlaying(false);
             console.log("🏁 Playback Finished");
