@@ -15,6 +15,7 @@ const MainSection: React.FC = () => {
   // 1. 초기 자동 재생 시도 및 볼륨 설정
   useEffect(() => {
     if (audioRef.current) {
+      audioRef.current.loop = true;
       audioRef.current.volume = 0.5;
       console.log("🎵 Audio Loaded: Volume set to 50%");
       // 브라우저 정책에 따라 첫 로드 시 play()는 차단될 수 있음
