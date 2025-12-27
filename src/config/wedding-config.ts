@@ -80,7 +80,9 @@ export const weddingConfig = {
       "/images/gallery/6.suitdress.webp",
       "/images/gallery/7.sea.webp",
       "/images/gallery/8.portuhill_800px.webp",
-      "/images/gallery/9.fireworks-animated.gif",
+      "/images/gallery/9.birthday_800px.webp",
+      "/images/gallery/10.coupleinblack_800px.webp",
+      "/images/gallery/11.fireworks-animated.gif",
     ],
   } as GalleryConfig,
 
