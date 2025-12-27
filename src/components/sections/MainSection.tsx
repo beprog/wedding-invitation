@@ -20,7 +20,38 @@ const MainSection = () => {
         quality={90}
         style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
       />
-      <AudioWrapper src={weddingConfig.main.music} />
+
+      <S.PlayerWrapper>
+        <S.TrackInfo>
+          <h3>Summer Breeze.mp3</h3>
+          <p>Lo-fi Hip Hop</p>
+        </S.TrackInfo>
+
+        <audio
+          ref={audioRef}
+          src={weddingConfig.main.music}
+          onTimeUpdate={updateProgress}
+          onEnded={() => setIsPlaying(false)}
+          autoPlay // HTML 속성상의 자동실행
+        />
+
+        <S.ProgressBarContainer>
+          <S.ProgressLine $width={progress} />
+        </S.ProgressBarContainer>
+
+        <S.Controls>
+          <S.PlayButton onClick={togglePlay}>
+            {isPlaying ? '⏸' : '▶'}
+          </S.PlayButton>
+          <S.VolumeSlider 
+            type="range" min="0" max="1" step="0.01" 
+            onChange={(e) => {
+              if (audioRef.current) audioRef.current.volume = Number(e.target.value);
+            }}
+          />
+        </S.Controls>
+      </S.PlayerWrapper>
+
       <Overlay />
       <MainContent>
         <MainTitle>{weddingConfig.main.title}</MainTitle>
@@ -68,11 +99,78 @@ const BackgroundImage = styled(Image)`
   z-index: 0;
 `;
 
-const AudioWrapper = styled.audio`
+/* 추가 시작 */
+const PlayerWrapper = styled.div`
   width: 100%;
-  max-width: 200px;
-  /* 추가 스타일 */
+  max-width: 400px;
+  background: #282828;
+  border-radius: 12px;
+  padding: 1.5rem;
+  color: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 `;
+
+const TrackInfo = styled.div`
+  margin-bottom: 1rem;
+  h3 { margin: 0; font-size: 1.1rem; }
+  p { margin: 4px 0 0; color: #b3b3b3; font-size: 0.85rem; }
+`;
+
+const ProgressBarContainer = styled.div`
+  width: 100%;
+  height: 4px;
+  background: #4f4f4f;
+  border-radius: 2px;
+  margin: 1rem 0;
+  position: relative;
+  cursor: pointer;
+`;
+
+const ProgressLine = styled.div<{ $width: number }>`
+  height: 100%;
+  width: ${props => props.$width}%;
+  background: #1db954;
+  border-radius: 2px;
+  transition: width 0.1s linear;
+`;
+
+const Controls = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const PlayButton = styled.button`
+  background: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-weight: bold;
+  cursor: pointer;
+  &:hover { transform: scale(1.05); }
+`;
+
+const VolumeSlider = styled.input`
+  accent-color: #1db954;
+  cursor: pointer;
+`;
+
+const Content = styled.main`
+  padding: 2rem;
+  overflow-y: auto;
+`;
+
+const PlayerBar = styled.footer`
+  background: #181818;
+  border-top: 1px solid #282828;
+  padding: 1rem;
+  display: flex;
+  justify-content: center; // 중앙 배치
+  align-items: center;
+`;
+
+/* 추가 끝 */
 
 const Overlay = styled.div`
   position: absolute;
