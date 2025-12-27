@@ -208,6 +208,7 @@ const PlayButton = styled.button`
   font-weight: bold;
   cursor: pointer;
   &:hover { transform: scale(1.05); }
+  z-index: 2;
 `;
 
 const VolumeSlider = styled.input`
