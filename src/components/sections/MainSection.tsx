@@ -90,21 +90,13 @@ const MainSection: React.FC = () => {
             console.log("🏁 Playback Finished");
           }}
         />
-
         <ProgressBarContainer>
           <ProgressLine $width={progress} />
         </ProgressBarContainer>
-
         <Controls>
           <PlayButton onClick={togglePlay}>
             {isPlaying ? '⏸' : '▶'}
           </PlayButton>
-          <VolumeSlider 
-            type="range" min="0" max="1" step="0.01" 
-            onChange={(e) => {
-              if (audioRef.current) audioRef.current.volume = Number(e.target.value);
-            }}
-          />
         </Controls>
       </PlayerWrapper>
 
@@ -166,12 +158,6 @@ const PlayerWrapper = styled.div`
   z-index: 1;
 `;
 
-const TrackInfo = styled.div`
-  margin-bottom: 1rem;
-  h3 { margin: 0; font-size: 1.1rem; }
-  p { margin: 4px 0 0; color: #b3b3b3; font-size: 0.85rem; }
-`;
-
 const ProgressBarContainer = styled.div`
   width: 100%;
   height: 4px;
@@ -206,11 +192,6 @@ const PlayButton = styled.button`
   cursor: pointer;
   &:hover { transform: scale(1.05); }
   z-index: 2;
-`;
-
-const VolumeSlider = styled.input`
-  accent-color: #1db954;
-  cursor: pointer;
 `;
 
 const Content = styled.main`
