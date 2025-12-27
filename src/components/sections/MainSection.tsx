@@ -20,6 +20,7 @@ const MainSection = () => {
         quality={90}
         style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
       />
+      <AudioWrapper src={weddingConfig.main.music} />
       <Overlay />
       <MainContent>
         <MainTitle>{weddingConfig.main.title}</MainTitle>
@@ -65,6 +66,12 @@ const MainSectionContainer = styled.section`
 
 const BackgroundImage = styled(Image)`
   z-index: 0;
+`;
+
+const AudioWrapper = styled.audio`
+  width: 100%;
+  max-width: 200px;
+  /* 추가 스타일 */
 `;
 
 const Overlay = styled.div`
