@@ -131,10 +131,10 @@ const PlayerWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 12px;
+  padding: 8px 10px;
   
   /* 유리창 효과 (Glassmorphism) */
-  background: rgba(255, 255, 255, 0.3); 
+  background: rgba(255, 255, 255, 0.8); 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(10px);
   
@@ -155,7 +155,7 @@ width: 32px;
   height: 32px;
   border-radius: 50%;
   border: none;
-  background: #333; /* 다크한 포인트 */
+  background: #222; /* 다크한 포인트 */
   color: white;
   display: flex;
   align-items: center;
@@ -163,10 +163,6 @@ width: 32px;
   cursor: pointer;
   font-size: 14px;
   transition: all 0.2s ease;
-
-  &:active {
-    transform: scale(0.9);
-  }
 `;
 
 const Content = styled.main`
