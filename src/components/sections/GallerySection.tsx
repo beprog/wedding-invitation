@@ -552,7 +552,7 @@ const ExpandedImageWrapper = styled.div<{ $isLoading: boolean }>`
 `;
 
 /* 이미지 확대 방지 시작 */
-export const NonZoomableImage = styled.img`
+export const Image = styled.img`
   /* 1. 두 번 탭하여 확대 방지 및 터치 동작 제한 */
   touch-action: none; 
 
