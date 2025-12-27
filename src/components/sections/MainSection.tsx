@@ -50,7 +50,7 @@ const MainSection: React.FC = () => {
       {}
       <BackgroundImage 
         src={weddingConfig.main.image}
-        alt="웨딩 배경 이미지"
+        alt="main image"
         fill
         priority
         sizes="100vw"
@@ -134,7 +134,7 @@ const PlayerWrapper = styled.div`
   padding: 8px 10px;
   
   /* 유리창 효과 (Glassmorphism) */
-  background: rgba(255, 255, 255, 0.2); 
+  background: rgba(255, 255, 255, 0.1); 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(10px);
   
@@ -155,7 +155,7 @@ width: 32px;
   height: 32px;
   border-radius: 50%;
   border: none;
-  background: #555; /* 다크한 포인트 */
+  background: #777; /* 다크한 포인트 */
   color: white;
   display: flex;
   align-items: center;
