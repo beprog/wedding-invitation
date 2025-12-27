@@ -73,6 +73,7 @@ export const GlobalStyle = createGlobalStyle`
     visibility: visible;
     opacity: 1;
     font-size: 16px;
+    touch-action: manipulation;
   }
   
   body {
