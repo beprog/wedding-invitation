@@ -134,7 +134,7 @@ const PlayerWrapper = styled.div`
   padding: 8px 12px;
   
   /* 유리창 효과 (Glassmorphism) */
-  background: rgba(255, 255, 255, 0.6); 
+  background: rgba(255, 255, 255, 0.3); 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   
@@ -142,7 +142,7 @@ const PlayerWrapper = styled.div`
   border-radius: 40px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   width: auto;
-  min-width: 140px;
+  min-width: 100px;
 `;
 
 const Controls = styled.div`
@@ -168,23 +168,11 @@ width: 32px;
   &:active {
     transform: scale(0.9);
   }
-
-  /* 재생 중일 때의 아이콘 색상 변경 제안 */
-  background: ${props => props.$isPlaying ? '#007AFF' : '#333'};
 `;
 
 const Content = styled.main`
   padding: 2rem;
   overflow-y: auto;
-`;
-
-const PlayerBar = styled.footer`
-  background: #181818;
-  border-top: 1px solid #282828;
-  padding: 1rem;
-  display: flex;
-  justify-content: center; // 중앙 배치
-  align-items: center;
 `;
 
 /* 추가 끝 */
