@@ -35,7 +35,7 @@ export default function RootLayout({
         <meta name="description" content={metaDescription} />
       </head>
       <body>
-        <audio src={weddingConfig.main.music} controls autoplay>
+        <audio src={weddingConfig.main.music} controls autoPlay>
           브라우저가 오디오 태그를 지원하지 않습니다.
         </audio>
         <GlobalStyle />
