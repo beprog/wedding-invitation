@@ -77,6 +77,8 @@ const MainSection: React.FC = () => {
         style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
       />
 
+      <Overlay />
+
       <PlayerWrapper>
         <TrackInfo>
           <h3>Summer Breeze.mp3</h3>
@@ -110,7 +112,6 @@ const MainSection: React.FC = () => {
         </Controls>
       </PlayerWrapper>
 
-      <Overlay />
       <MainContent>
         <MainTitle>{weddingConfig.main.title}</MainTitle>
         <DateText>{weddingConfig.main.date}</DateText>
