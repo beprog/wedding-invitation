@@ -7,7 +7,39 @@ import { weddingConfig } from '../../config/wedding-config';
 
 const watermarkId = weddingConfig.meta._jwk_watermark_id || 'JWK-NonCommercial';
 
-const MainSection = () => {
+const MainSection: React.FC = () => {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  // 자동 재생 설정 및 초기 볼륨
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = 0.5;
+      // 브라우저 정책에 따라 첫 로드 시 play()는 차단될 수 있음
+      audioRef.current.play().catch(() => console.log("Autoplay blocked by browser"));
+    }
+  }, []);
+
+  const togglePlay = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const updateProgress = () => {
+    if (audioRef.current) {
+      const { currentTime, duration } = audioRef.current;
+      setProgress((currentTime / duration) * 100);
+    }
+  };
+
+
   return (
     <MainSectionContainer className={`wedding-container jwk-${watermarkId.slice(0, 8)}-main`}>
       {}
