@@ -122,7 +122,7 @@ const BackgroundImage = styled(Image)`
   z-index: 0;
 `;
 
-/* 추가 시작 */
+/* 오디오 추가 시작 */
 const PlayerWrapper = styled.div`
   position: fixed;
   top: 12px;
@@ -169,8 +169,7 @@ const Content = styled.main`
   padding: 2rem;
   overflow-y: auto;
 `;
-
-/* 추가 끝 */
+/* 오디오 추가 끝 */
 
 const Overlay = styled.div`
   position: absolute;

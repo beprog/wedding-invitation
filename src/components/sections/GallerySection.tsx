@@ -551,6 +551,23 @@ const ExpandedImageWrapper = styled.div<{ $isLoading: boolean }>`
   transition: opacity 0.3s ease;
 `;
 
+/* 이미지 확대 방지 시작 */
+export const NonZoomableImage = styled.img`
+  /* 1. 두 번 탭하여 확대 방지 및 터치 동작 제한 */
+  touch-action: none; 
+
+  /* 2. iOS에서 이미지를 길게 눌렀을 때 저장 메뉴가 뜨는 것 방지 (선택 사항) */
+  -webkit-touch-callout: none;
+
+  /* 3. 이미지 선택 및 드래그 방지 */
+  user-select: none;
+  -webkit-user-drag: none;
+  
+  width: 100%;
+  height: auto;
+`;
+/* 이미지 확대 방지 끝 */
+
 const CloseButton = styled.button`
   position: absolute;
   top: 1rem;
