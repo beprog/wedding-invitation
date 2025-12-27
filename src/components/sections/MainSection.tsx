@@ -25,7 +25,7 @@ const MainSection = () => {
         <TrackInfo>
           <h3>Summer Breeze.mp3</h3>
           <p>Lo-fi Hip Hop</p>
-        <TrackInfo>
+        </TrackInfo>
 
         <audio
           ref={audioRef}
