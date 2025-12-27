@@ -18,7 +18,6 @@ const MainSection: React.FC = () => {
       audioRef.current.loop = true;
       audioRef.current.volume = 0.5;
       console.log("🎵 Audio Loaded: Volume set to 50%");
-      // 브라우저 정책에 따라 첫 로드 시 play()는 차단될 수 있음
 
       audioRef.current.play().catch(() => console.log("Autoplay blocked by browser"));
       audioRef.current.play()
@@ -46,25 +45,6 @@ const MainSection: React.FC = () => {
     }
   };
 
-  // 3. 볼륨 수정 핸들러
-  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newVolume = Number(e.target.value);
-    if (audioRef.current) {
-      audioRef.current.volume = newVolume;
-      console.log(`🔊 Volume Changed: ${Math.round(newVolume * 100)}%`);
-    }
-  };
-
-  // 진행 바 업데이트
-  const onTimeUpdate = () => {
-    if (audioRef.current) {
-      const cur = audioRef.current.currentTime;
-      const dur = audioRef.current.duration;
-      setProgress((cur / dur) * 100);
-    }
-  };
-
-
   return (
     <MainSectionContainer className={`wedding-container jwk-${watermarkId.slice(0, 8)}-main`}>
       {}
@@ -90,9 +70,6 @@ const MainSection: React.FC = () => {
             console.log("🏁 Playback Finished");
           }}
         />
-        <ProgressBarContainer>
-          <ProgressLine $width={progress} />
-        </ProgressBarContainer>
         <Controls>
           <PlayButton onClick={togglePlay}>
             {isPlaying ? '⏸' : '▶'}
@@ -158,24 +135,6 @@ const PlayerWrapper = styled.div`
   z-index: 1;
 `;
 
-const ProgressBarContainer = styled.div`
-  width: 100%;
-  height: 4px;
-  background: #4f4f4f;
-  border-radius: 2px;
-  margin: 1rem 0;
-  position: relative;
-  cursor: pointer;
-`;
-
-const ProgressLine = styled.div<{ $width: number }>`
-  height: 100%;
-  width: ${props => props.$width}%;
-  background: #1db954;
-  border-radius: 2px;
-  transition: width 0.1s linear;
-`;
-
 const Controls = styled.div`
   display: flex;
   align-items: center;
@@ -191,7 +150,6 @@ const PlayButton = styled.button`
   font-weight: bold;
   cursor: pointer;
   &:hover { transform: scale(1.05); }
-  z-index: 2;
 `;
 
 const Content = styled.main`
