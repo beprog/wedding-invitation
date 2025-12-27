@@ -72,14 +72,14 @@ export const weddingConfig = {
     layout: "scroll" as GalleryLayout, // "scroll" 또는 "grid" 선택
     position: "bottom" as GalleryPosition, // "middle" (현재 위치) 또는 "bottom" (맨 하단) 선택
     images: [
-      "/images/gallery/1.forest_800px.jpg",
-      "/images/gallery/2.kiss_800px.jpg",
-      "/images/gallery/3.happy_800px.jpg",
-      "/images/gallery/4.laughter_800px.jpg",
-      "/images/gallery/5.dance_800px.jpg",
-      "/images/gallery/6.suitdress.jpg",
-      "/images/gallery/7.sea.jpg",
-      "/images/gallery/8.portuhill_800px.jpg",
+      "/images/gallery/1.forest_800px.webp",
+      "/images/gallery/2.kiss_800px.webp",
+      "/images/gallery/3.happy_800px.webp",
+      "/images/gallery/4.laughter_800px.webp",
+      "/images/gallery/5.dance_800px.webp",
+      "/images/gallery/6.suitdress.webp",
+      "/images/gallery/7.sea.webp",
+      "/images/gallery/8.portuhill_800px.webp",
       "/images/gallery/9.fireworks-animated.gif",
     ],
   } as GalleryConfig,
