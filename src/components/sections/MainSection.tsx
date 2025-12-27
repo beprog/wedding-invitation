@@ -134,7 +134,7 @@ const PlayerWrapper = styled.div`
   padding: 8px 10px;
   
   /* 유리창 효과 (Glassmorphism) */
-  background: rgba(255, 255, 255, 0.8); 
+  background: rgba(255, 255, 255, 0.2); 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(10px);
   
