@@ -155,7 +155,7 @@ width: 32px;
   height: 32px;
   border-radius: 50%;
   border: none;
-  background: #222; /* 다크한 포인트 */
+  background: #555; /* 다크한 포인트 */
   color: white;
   display: flex;
   align-items: center;
