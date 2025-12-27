@@ -12,30 +12,54 @@ const MainSection: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
 
-  // 자동 재생 설정 및 초기 볼륨
+  // 1. 초기 자동 재생 시도 및 볼륨 설정
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = 0.5;
+      console.log("🎵 Audio Loaded: Volume set to 50%");
       // 브라우저 정책에 따라 첫 로드 시 play()는 차단될 수 있음
+
       audioRef.current.play().catch(() => console.log("Autoplay blocked by browser"));
+      audioRef.current.play()
+        .then(() => {
+          setIsPlaying(true);
+          console.log("▶️ Autoplay Success: Music started");
+        })
+        .catch(() => {
+          console.warn("⚠️ Autoplay Blocked: Interaction required");
+        });
     }
   }, []);
 
+  // 2. 재생/일시정지 핸들러
   const togglePlay = () => {
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
+        console.log("⏸ Audio Paused");
       } else {
         audioRef.current.play();
+        console.log("▶️ Audio Playing");
       }
       setIsPlaying(!isPlaying);
     }
   };
 
-  const updateProgress = () => {
+  // 3. 볼륨 수정 핸들러
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newVolume = Number(e.target.value);
     if (audioRef.current) {
-      const { currentTime, duration } = audioRef.current;
-      setProgress((currentTime / duration) * 100);
+      audioRef.current.volume = newVolume;
+      console.log(`🔊 Volume Changed: ${Math.round(newVolume * 100)}%`);
+    }
+  };
+
+  // 진행 바 업데이트
+  const onTimeUpdate = () => {
+    if (audioRef.current) {
+      const cur = audioRef.current.currentTime;
+      const dur = audioRef.current.duration;
+      setProgress((cur / dur) * 100);
     }
   };
 
@@ -62,9 +86,11 @@ const MainSection: React.FC = () => {
         <audio
           ref={audioRef}
           src={weddingConfig.main.music}
-          onTimeUpdate={updateProgress}
-          onEnded={() => setIsPlaying(false)}
-          autoPlay // HTML 속성상의 자동실행
+          onTimeUpdate={onTimeUpdate}
+          onEnded={() => {
+            setIsPlaying(false);
+            console.log("🏁 Playback Finished");
+          }}
         />
 
         <ProgressBarContainer>
