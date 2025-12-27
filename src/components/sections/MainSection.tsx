@@ -142,7 +142,6 @@ const PlayerWrapper = styled.div`
   border-radius: 40px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   width: auto;
-  min-width: 100px;
 `;
 
 const Controls = styled.div`
