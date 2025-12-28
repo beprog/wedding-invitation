@@ -47,9 +47,8 @@ const MainSection: React.FC = () => {
   };
 
   return (
-   <SnowEffect />
-
     <MainSectionContainer className={`wedding-container jwk-${watermarkId.slice(0, 8)}-main`}>
+     <SnowEffect />
       {}
       <BackgroundImage 
         src={weddingConfig.main.image}
