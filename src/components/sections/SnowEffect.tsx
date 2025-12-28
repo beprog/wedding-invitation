@@ -7,7 +7,7 @@ const SnowEffect: React.FC = () => {
       // ❄️ 눈송이 색상 (반투명 화이트 추천)
       color="#ffffff"
       // ❄️ 눈송이 개수 (모바일 고려 100~150개 추천)
-      snowflakeCount={70}
+      snowflakeCount={50}
       // ❄️ 눈송이 크기 범위 [최소, 최대]
       radius={[0.5, 3.0]}
       // ❄️ 내리는 속도 범위 [최소, 최대]
