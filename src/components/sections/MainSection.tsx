@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { weddingConfig } from '../../config/wedding-config';
+import SnowEffect from './SnowEffect';
 
 const watermarkId = weddingConfig.meta._jwk_watermark_id || 'JWK-NonCommercial';
 
@@ -46,6 +47,9 @@ const MainSection: React.FC = () => {
   };
 
   return (
+   {/* 눈 내리는 효과 */}
+   <SnowEffect />
+
     <MainSectionContainer className={`wedding-container jwk-${watermarkId.slice(0, 8)}-main`}>
       {}
       <BackgroundImage 

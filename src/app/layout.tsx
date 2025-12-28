@@ -3,8 +3,6 @@ import { weddingConfig } from '../config/wedding-config';
 import Watermark from '../lib/watermark';
 import { GlobalStyle } from '../styles/globalStyles';
 import CacheManager from '../components/CacheManager';
-import SnowEffect from '../components/sections/SnowEffect';
-
 
 const watermarkId = weddingConfig.meta._jwk_watermark_id || 'JWK-NonCommercial';
 const metaDescription = '웨딩 청첩장 - 비상업적 용도';
@@ -37,9 +35,6 @@ export default function RootLayout({
         <meta name="description" content={metaDescription} />
       </head>
       <body>
-        {/* 눈 내리는 효과 */}
-        <SnowEffect />
-
         <GlobalStyle />
         <CacheManager />
         {}
