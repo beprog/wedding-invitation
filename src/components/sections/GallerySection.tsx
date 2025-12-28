@@ -360,10 +360,10 @@ const GallerySection = ({ bgColor = 'white' }: GallerySectionProps) => {
               </LoadingSpinnerContainer>
             )}
             <ExpandedImageWrapper $isLoading={isExpandedImageLoading}>
-              <NonScalableImage 
+              <NonScalableImage
                 src={expandedImage}
                 alt="확대된 웨딩 갤러리 이미지"
-                /* fill */
+                fill
                 sizes="100vw"
                 quality={90}
                 style={{ objectFit: 'contain', background: 'transparent' }}
@@ -552,7 +552,7 @@ const ExpandedImageWrapper = styled.div<{ $isLoading: boolean }>`
 `;
 
 /* 이미지 확대 방지 시작 */
-export const NonScalableImage = styled.img`
+const NonScalableImage = styled.img`
   /* 1. 두 번 탭하여 확대 방지 및 터치 동작 제한 */
   touch-action: none; 
 
