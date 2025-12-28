@@ -360,7 +360,7 @@ const GallerySection = ({ bgColor = 'white' }: GallerySectionProps) => {
               </LoadingSpinnerContainer>
             )}
             <ExpandedImageWrapper $isLoading={isExpandedImageLoading}>
-              <NonScalableImage
+              <NonScalableImage>
                 src={expandedImage}
                 alt="확대된 웨딩 갤러리 이미지"
                 fill
@@ -371,7 +371,7 @@ const GallerySection = ({ bgColor = 'white' }: GallerySectionProps) => {
                 onContextMenu={e => e.preventDefault()}
                 onLoad={handleExpandedImageLoad}
                 onError={handleExpandedImageError}
-              />
+              /NonScalableImage>
             </ExpandedImageWrapper>
             <CloseButton onClick={handleCloseExpanded} aria-label="닫기">×</CloseButton>
           </ExpandedImageContainer>
