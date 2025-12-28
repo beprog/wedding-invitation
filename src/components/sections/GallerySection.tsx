@@ -371,7 +371,7 @@ const GallerySection = ({ bgColor = 'white' }: GallerySectionProps) => {
                 onContextMenu={e => e.preventDefault()}
                 onLoad={handleExpandedImageLoad}
                 onError={handleExpandedImageError}
-              /NonScalableImage>
+              </NonScalableImage>
             </ExpandedImageWrapper>
             <CloseButton onClick={handleCloseExpanded} aria-label="닫기">×</CloseButton>
           </ExpandedImageContainer>
