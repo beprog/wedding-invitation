@@ -363,7 +363,7 @@ const GallerySection = ({ bgColor = 'white' }: GallerySectionProps) => {
               <NonScalableImage 
                 src={expandedImage}
                 alt="확대된 웨딩 갤러리 이미지"
-                fill
+                /* fill */
                 sizes="100vw"
                 quality={90}
                 style={{ objectFit: 'contain', background: 'transparent' }}
