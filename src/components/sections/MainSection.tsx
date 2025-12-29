@@ -229,7 +229,7 @@ const PlayButton = styled.button<{ $isPlaying: boolean }>`
   height: 32px;
   border-radius: 50%;
   border: none;
-  background: transparent; /* 투명 배경 */
+  background: #777; /* 투명 배경 */
   color: white;
   display: flex;
   align-items: center;
