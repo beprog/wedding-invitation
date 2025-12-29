@@ -9,66 +9,40 @@ import SnowEffect from './SnowEffect';
 const watermarkId = weddingConfig.meta._jwk_watermark_id || 'JWK-NonCommercial';
 
 const MainSection: React.FC = () => {
-  // const audioRef = useRef<HTMLAudioElement | null>(null);
-  // 1. 오디오 Ref 2개 생성
-  const mainAudioRef = useRef<HTMLAudioElement | null>(null);
-  const hiddenAudioRef = useRef<HTMLAudioElement | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [progress, setProgress] = useState(0);
 
-  // const [isPlaying, setIsPlaying] = useState(false);
-  // const [progress, setProgress] = useState(0);
-
-  // 2. 각각의 재생 상태 관리
-  const [isMainPlaying, setIsMainPlaying] = useState(false);
-  const [isHiddenPlaying, setIsHiddenPlaying] = useState(false);
-
-  // 초기 설정 (메인 오디오 자동 재생 시도)
+  // 1. 초기 자동 재생 시도 및 볼륨 설정
   useEffect(() => {
-    [mainAudioRef, hiddenAudioRef].forEach((ref) => {
-      if (ref.current) {
-        ref.current.loop = true;
-        ref.current.volume = 0.5;
-      }
-    });
+    if (audioRef.current) {
+      audioRef.current.loop = true;
+      audioRef.current.volume = 0.5;
+      console.log("🎵 Audio Loaded: Volume set to 50%");
 
-    // 메인 오디오 자동 재생 시도
-    if (mainAudioRef.current) {
-      mainAudioRef.current.play()
-        .then(() => setIsMainPlaying(true))
-        .catch(() => console.warn("Autoplay blocked"));
+      audioRef.current.play().catch(() => console.log("Autoplay blocked by browser"));
+      audioRef.current.play()
+        .then(() => {
+          setIsPlaying(true);
+          console.log("▶️ Autoplay Success: Music started");
+        })
+        .catch(() => {
+          console.warn("⚠️ Autoplay Blocked: Interaction required");
+        });
     }
   }, []);
 
-  // 3. 메인 오디오 토글 핸들러
-  const toggleMainPlay = () => {
-    if (mainAudioRef.current && hiddenAudioRef.current) {
-      if (isMainPlaying) {
-        mainAudioRef.current.pause();
-        setIsMainPlaying(false);
+  // 2. 재생/일시정지 핸들러
+  const togglePlay = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+        console.log("⏸ Audio Paused");
       } else {
-        // 메인 재생 시 히든 오디오는 정지
-        hiddenAudioRef.current.pause();
-        setIsHiddenPlaying(false);
-        
-        mainAudioRef.current.play();
-        setIsMainPlaying(true);
+        audioRef.current.play();
+        console.log("▶️ Audio Playing");
       }
-    }
-  };
-
-  // 4. 히든 오디오 토글 핸들러
-  const toggleHiddenPlay = () => {
-    if (mainAudioRef.current && hiddenAudioRef.current) {
-      if (isHiddenPlaying) {
-        hiddenAudioRef.current.pause();
-        setIsHiddenPlaying(false);
-      } else {
-        // 히든 재생 시 메인 오디오는 정지
-        mainAudioRef.current.pause();
-        setIsMainPlaying(false);
-
-        hiddenAudioRef.current.play();
-        setIsHiddenPlaying(true);
-      }
+      setIsPlaying(!isPlaying);
     }
   };
 
@@ -88,19 +62,21 @@ const MainSection: React.FC = () => {
 
       <Overlay />
 
-    {/* 메인 플레이어 섹션 */}
-    <MainPlayerWrapper>
-      <audio
-        ref={mainAudioRef}
-        src={weddingConfig.main.backgroundMusic}
-        onEnded={() => setIsMainPlaying(false)}
+      <PlayerWrapper>
+        <audio
+          ref={audioRef}
+          src={weddingConfig.main.backgroundMusic}
+          onEnded={() => {
+            setIsPlaying(false);
+            console.log("🏁 Playback Finished");
+          }}
       />
       <Controls>
-        <PlayButton onClick={toggleMainPlay} $isPlaying={isMainPlaying}>
-          {isMainPlaying ? '■' : '♫'}
+        <PlayButton onClick={togglePlay} $isPlaying={isPlaying}>
+          {isPlaying ? '■' : '♫'}
         </PlayButton>
       </Controls>
-    </MainPlayerWrapper>
+    </PlayerWrapper>
 
     <MainContent>
       <MainTitle>{weddingConfig.main.title}</MainTitle>
@@ -115,18 +91,20 @@ const MainSection: React.FC = () => {
     <ScrollIndicator>
       <i className="fas fa-chevron-down"></i>
     </ScrollIndicator>
-    {/* 히든 플레이어 섹션 */}
-    <HiddenPlayerWrapper>
-      <audio
-        ref={hiddenAudioRef}
-        src={weddingConfig.main.hiddenMusic}
-        onEnded={() => setIsHiddenPlaying(false)}
-      />
-      <Controls>
-        <HiddenPlayButton onClick={toggleHiddenPlay} $isPlaying={isHiddenPlaying}>
-          {isHiddenPlaying ? '■' : '♫'}
-        </HiddenPlayButton>
-      </Controls>
+      <HiddenPlayerWrapper>
+        <audio
+          ref={audioRef}
+          src={weddingConfig.main.hiddenMusic}
+          onEnded={() => {
+            setIsPlaying(false);
+            console.log("🏁 HiddenMusic Playback Finished");
+        }}
+       />
+       <Controls>
+         <HiddenPlayButton onClick={togglePlay} $isPlaying={isPlaying}>
+           {isPlaying ? '■' : '♫'}
+         </HiddenPlayButton>
+       </Controls>
     </HiddenPlayerWrapper>
   </MainSectionContainer>
   );
@@ -162,7 +140,7 @@ const BackgroundImage = styled(Image)`
 `;
 
 /* 오디오 추가 시작 */
-const MainPlayerWrapper = styled.div`
+const PlayerWrapper = styled.div`
   position: fixed;
   top: 12px;
   right: 12px;
