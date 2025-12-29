@@ -47,7 +47,7 @@ const MainSection: React.FC = () => {
   };
 
   return (
-    <MainSectionContainer className={`wedding-container jwk-${watermarkId.slice(0, 8)}-main`}>
+   <MainSectionContainer className={`wedding-container jwk-${watermarkId.slice(0, 8)}-main`}>
      <SnowEffect />
       {}
       <BackgroundImage 
@@ -65,33 +65,48 @@ const MainSection: React.FC = () => {
       <PlayerWrapper>
         <audio
           ref={audioRef}
-          src={weddingConfig.main.music}
+          src={weddingConfig.main.backgroundMusic}
           onEnded={() => {
             setIsPlaying(false);
             console.log("🏁 Playback Finished");
           }}
-        />
-        <Controls>
-          <PlayButton onClick={togglePlay} $isPlaying={isPlaying}>
-            {isPlaying ? '■' : '▶'}
-          </PlayButton>
-        </Controls>
-      </PlayerWrapper>
+      />
+      <Controls>
+        <PlayButton onClick={togglePlay} $isPlaying={isPlaying}>
+          {isPlaying ? '■' : '▶'}
+        </PlayButton>
+      </Controls>
+    </PlayerWrapper>
 
-      <MainContent>
-        <MainTitle>{weddingConfig.main.title}</MainTitle>
-        <DateText>{weddingConfig.main.date}</DateText>
-        <VenueText>{weddingConfig.main.venue}</VenueText>
-        {}
-        <HiddenWatermark aria-hidden="true">
-          {watermarkId}
-        </HiddenWatermark>
-      </MainContent>
+    <MainContent>
+      <MainTitle>{weddingConfig.main.title}</MainTitle>
+      <DateText>{weddingConfig.main.date}</DateText>
+      <VenueText>{weddingConfig.main.venue}</VenueText>
+      {}
+      <HiddenWatermark aria-hidden="true">
+        {watermarkId}
+      </HiddenWatermark>
+    </MainContent>
       
-      <ScrollIndicator>
-        <i className="fas fa-chevron-down"></i>
-      </ScrollIndicator>
-    </MainSectionContainer>
+    <ScrollIndicator>
+      <i className="fas fa-chevron-down"></i>
+    </ScrollIndicator>
+      <HiddenPlayerWrapper>
+        <audio
+          ref={audioRef}
+          src={weddingConfig.main.hiddenMusic}
+          onEnded={() => {
+            setIsPlaying(false);
+            console.log("🏁 HiddenMusic Playback Finished");
+        }}
+       />
+       <Controls>
+         <PlayButton onClick={togglePlay} $isPlaying={isPlaying}>
+           {isPlaying ? '■' : '♫'}
+         </PlayButton>
+       </Controls>
+    </HiddenPlayerWrapper>
+  </MainSectionContainer>
   );
 };
 
@@ -146,6 +161,27 @@ const PlayerWrapper = styled.div`
   width: auto;
 `;
 
+const HiddenPlayerWrapper = styled.div`
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  
+  /* 유리창 효과 (Glassmorphism) */
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: auto;
+`;
+
 const Controls = styled.div`
   display: flex;
   align-items: center;
@@ -171,6 +207,7 @@ const Content = styled.main`
   padding: 2rem;
   overflow-y: auto;
 `;
+
 /* 오디오 추가 끝 */
 
 const Overlay = styled.div`
