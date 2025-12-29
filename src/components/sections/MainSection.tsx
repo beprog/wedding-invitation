@@ -202,7 +202,7 @@ const HiddenPlayerWrapper = styled.div`
   position: fixed;
   top: 12px;
   left: 12px;
-  opacity: 0.02;
+  opacity: 0.03;
   z-index: 1000;
   display: flex;
   align-items: center;
