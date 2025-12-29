@@ -202,7 +202,7 @@ const HiddenPlayerWrapper = styled.div`
   position: absolute;
   top: 12px;
   left: 12px;
-  opacity: 0.05;
+  opacity: 0.03;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -247,7 +247,7 @@ const HiddenPlayButton = styled.button<{ $isPlaying: boolean }>`
   border-radius: 50%;
   border: none;
   background: none; /* 밝은한 포인트 */
-  color: black;
+  color: blue;
   display: flex;
   align-items: center;
   justify-content: center;
