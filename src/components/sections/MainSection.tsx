@@ -198,9 +198,9 @@ const MainPlayerWrapper = styled.div`
 
 const HiddenPlayerWrapper = styled.div`
   position: absolute;
-  bottom: 5px;
-  right: 5px;
-  opacity: 0.1;
+  bottom: 12px;
+  right: 12px;
+  opacity: 0.2;
   z-index: 1000;
   display: flex;
   align-items: center;
