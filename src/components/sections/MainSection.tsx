@@ -163,8 +163,9 @@ const PlayerWrapper = styled.div`
 
 const HiddenPlayerWrapper = styled.div`
   position: absolute;
-  bottom: 12px;
-  right: 12px;
+  opacity: 0.1
+  bottom: 5px;
+  right: 5px;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -206,15 +207,15 @@ const PlayButton = styled.button<{ $isPlaying: boolean }>`
 const HiddenPlayButton = styled.button<{ $isPlaying: boolean }>`
   width: 25px;
   height: 25px;
-  border-radius: 30%;
+  border-radius: 50%;
   border: none;
-  background: #777; /* 다크한 포인트 */
+  background: #111; /* 다크한 포인트 */
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 10px;
   transition: all 0.2s ease;
 `;
 
