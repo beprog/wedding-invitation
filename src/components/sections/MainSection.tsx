@@ -10,8 +10,8 @@ const watermarkId = weddingConfig.meta._jwk_watermark_id || 'JWK-NonCommercial';
 
 const MainSection: React.FC = () => {
   // 1. 오디오 Ref 2개 생성
-  const hiddenAudioRef = useRef<HTMLAudioElement | null>(null);
   const mainAudioRef = useRef<HTMLAudioElement | null>(null);
+  const hiddenAudioRef = useRef<HTMLAudioElement | null>(null);
   
   // 2. 각각의 재생 상태 관리
   const [isMainPlaying, setIsMainPlaying] = useState(false);
