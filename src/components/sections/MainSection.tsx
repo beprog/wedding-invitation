@@ -9,9 +9,14 @@ import SnowEffect from './SnowEffect';
 const watermarkId = weddingConfig.meta._jwk_watermark_id || 'JWK-NonCommercial';
 
 const MainSection: React.FC = () => {
-  // 1. 오디오 Ref 2개 생성
-  const mainAudioRef = useRef<HTMLAudioElement | null>(null);
-  const hiddenAudioRef = useRef<HTMLAudioElement | null>(null);
+  // 1. 객체 형태로 Ref 정의 (메인과 히든을 명확히 구분)
+  const audioRefs = useRef<{
+    main: HTMLAudioElement | null;
+    hidden: HTMLAudioElement | null;
+  }>({
+    main: null,
+    hidden: null,
+  });
   
   // 2. 각각의 재생 상태 관리
   const [isMainPlaying, setIsMainPlaying] = useState(false);
@@ -19,22 +24,24 @@ const MainSection: React.FC = () => {
 
   // 초기 설정 (메인 오디오 자동 재생 시도)
   useEffect(() => {
-    [mainAudioRef, hiddenAudioRef].forEach((ref) => {
-      if (ref.current) {
-        ref.current.loop = true;
-        ref.current.volume = 0.5;
+    const { main, hidden } = audioRefs.current;
+
+    // 공통 설정 적용
+    [main, hidden].forEach((el) => {
+      if (el) {
+        el.loop = true;
+        el.volume = 0.5;
       }
     });
 
-    // [변경] 메인 오디오 자동 재생 로직
+    // 메인 오디오 자동 재생 시도
     const attemptAutoplay = async () => {
-      if (mainAudioRef.current) {
+      if (main) {
         try {
-          await mainAudioRef.current.play();
+          await main.play();
           setIsMainPlaying(true);
-          console.log("▶️ Main Autoplay Success");
         } catch (error) {
-          console.warn("⚠️ Autoplay blocked: Interaction required");
+          console.warn("⚠️ Autoplay blocked by browser");
         }
       }
     };
@@ -42,37 +49,37 @@ const MainSection: React.FC = () => {
     attemptAutoplay();
   }, []);
 
-  // 3. 메인 오디오 토글 핸들러
+  // 2. 메인 오디오 토글 핸들러
   const toggleMainPlay = () => {
-    if (mainAudioRef.current && hiddenAudioRef.current) {
-      if (isMainPlaying) {
-        mainAudioRef.current.pause();
-        setIsMainPlaying(false);
-      } else {
-        // 메인 재생 시 히든 오디오는 정지
-        hiddenAudioRef.current.pause();
-        setIsHiddenPlaying(false);
-        
-        mainAudioRef.current.play();
-        setIsMainPlaying(true);
-      }
+    const { main, hidden } = audioRefs.current;
+    if (!main || !hidden) return;
+
+    if (isMainPlaying) {
+      main.pause();
+      setIsMainPlaying(false);
+    } else {
+      // 메인 켤 때 히든은 끔
+      hidden.pause();
+      setIsHiddenPlaying(false);
+      main.play();
+      setIsMainPlaying(true);
     }
   };
 
-  // 4. 히든 오디오 토글 핸들러
+  // 3. 히든 오디오 토글 핸들러
   const toggleHiddenPlay = () => {
-    if (mainAudioRef.current && hiddenAudioRef.current) {
-      if (isHiddenPlaying) {
-        hiddenAudioRef.current.pause();
-        setIsHiddenPlaying(false);
-      } else {
-        // 히든 재생 시 메인 오디오는 정지
-        mainAudioRef.current.pause();
-        setIsMainPlaying(false);
+    const { main, hidden } = audioRefs.current;
+    if (!main || !hidden) return;
 
-        hiddenAudioRef.current.play();
-        setIsHiddenPlaying(true);
-      }
+    if (isHiddenPlaying) {
+      hidden.pause();
+      setIsHiddenPlaying(false);
+    } else {
+      // 히든 켤 때 메인은 끔
+      main.pause();
+      setIsMainPlaying(false);
+      hidden.play();
+      setIsHiddenPlaying(true);
     }
   };
 
@@ -92,10 +99,11 @@ const MainSection: React.FC = () => {
 
       <Overlay />
 
-    {/* 메인 플레이어 섹션 */}
+      {/* 메인 플레이어 */}
     <MainPlayerWrapper>
       <audio
-        ref={mainAudioRef}
+        // Callback Ref를 사용하여 객체의 main 키에 할당
+        ref={(el) => (audioRefs.current.main = el)}
         src={weddingConfig.main.backgroundMusic}
         onEnded={() => setIsMainPlaying(false)}
       />
@@ -119,10 +127,11 @@ const MainSection: React.FC = () => {
     <ScrollIndicator>
       <i className="fas fa-chevron-down"></i>
     </ScrollIndicator>
-    {/* 히든 플레이어 섹션 */}
+    {/* 히든 플레이어 */}
     <HiddenPlayerWrapper>
       <audio
-        ref={hiddenAudioRef}
+        // Callback Ref를 사용하여 객체의 hidden 키에 할당
+        ref={(el) => (audioRefs.current.hidden = el)}
         src={weddingConfig.main.hiddenMusic}
         onEnded={() => setIsHiddenPlaying(false)}
       />
