@@ -73,7 +73,7 @@ const MainSection: React.FC = () => {
       />
       <Controls>
         <PlayButton onClick={togglePlay} $isPlaying={isPlaying}>
-          {isPlaying ? '■' : '▶'}
+          {isPlaying ? '■' : '♫'}
         </PlayButton>
       </Controls>
     </PlayerWrapper>
@@ -101,9 +101,9 @@ const MainSection: React.FC = () => {
         }}
        />
        <Controls>
-         <PlayButton onClick={togglePlay} $isPlaying={isPlaying}>
+         <HiddenPlayButton onClick={togglePlay} $isPlaying={isPlaying}>
            {isPlaying ? '■' : '♫'}
-         </PlayButton>
+         </HiddenPlayButton>
        </Controls>
     </HiddenPlayerWrapper>
   </MainSectionContainer>
@@ -189,7 +189,7 @@ const Controls = styled.div`
 `;
 
 const PlayButton = styled.button<{ $isPlaying: boolean }>`
-width: 32px;
+  width: 32px;
   height: 32px;
   border-radius: 50%;
   border: none;
@@ -200,6 +200,21 @@ width: 32px;
   justify-content: center;
   cursor: pointer;
   font-size: 14px;
+  transition: all 0.2s ease;
+`;
+
+const HiddenPlayButton = styled.button<{ $isPlaying: boolean }>`
+  width: 25px;
+  height: 25px;
+  border-radius: 30%;
+  border: none;
+  background: #777; /* 다크한 포인트 */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 12px;
   transition: all 0.2s ease;
 `;
 
