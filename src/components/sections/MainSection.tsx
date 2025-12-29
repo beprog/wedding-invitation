@@ -199,10 +199,10 @@ const MainPlayerWrapper = styled.div`
 `;
 
 const HiddenPlayerWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 12px;
   left: 12px;
-  opacity: 0.03;
+  opacity: 0.01;
   z-index: 1000;
   display: flex;
   align-items: center;
