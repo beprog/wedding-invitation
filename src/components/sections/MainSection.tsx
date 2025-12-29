@@ -10,8 +10,8 @@ const watermarkId = weddingConfig.meta._jwk_watermark_id || 'JWK-NonCommercial';
 
 const MainSection: React.FC = () => {
   // 1. 오디오 Ref 2개 생성
-  const mainAudioRef = useRef<HTMLAudioElement | null>(null);
   const hiddenAudioRef = useRef<HTMLAudioElement | null>(null);
+  const mainAudioRef = useRef<HTMLAudioElement | null>(null);
   
   // 2. 각각의 재생 상태 관리
   const [isMainPlaying, setIsMainPlaying] = useState(false);
@@ -26,12 +26,20 @@ const MainSection: React.FC = () => {
       }
     });
 
-    // 메인 오디오 자동 재생 시도
-    if (mainAudioRef.current) {
-      mainAudioRef.current.play()
-        .then(() => setIsMainPlaying(true))
-        .catch(() => console.warn("Autoplay blocked"));
-    }
+    // [변경] 메인 오디오 자동 재생 로직
+    const attemptAutoplay = async () => {
+      if (mainAudioRef.current) {
+        try {
+          await mainAudioRef.current.play();
+          setIsMainPlaying(true);
+          console.log("▶️ Main Autoplay Success");
+        } catch (error) {
+          console.warn("⚠️ Autoplay blocked: Interaction required");
+        }
+      }
+    };
+
+    attemptAutoplay();
   }, []);
 
   // 3. 메인 오디오 토글 핸들러
