@@ -114,19 +114,6 @@ const MainSection: React.FC = () => {
       </Controls>
     </MainPlayerWrapper>
 
-    <MainContent>
-      <MainTitle>{weddingConfig.main.title}</MainTitle>
-      <DateText>{weddingConfig.main.date}</DateText>
-      <VenueText>{weddingConfig.main.venue}</VenueText>
-      {}
-      <HiddenWatermark aria-hidden="true">
-        {watermarkId}
-      </HiddenWatermark>
-    </MainContent>
-      
-    <ScrollIndicator>
-      <i className="fas fa-chevron-down"></i>
-    </ScrollIndicator>
     {/* 히든 플레이어 */}
     <HiddenPlayerWrapper>
       <audio
@@ -141,6 +128,21 @@ const MainSection: React.FC = () => {
         </HiddenPlayButton>
       </Controls>
     </HiddenPlayerWrapper>
+
+    <MainContent>
+      <MainTitle>{weddingConfig.main.title}</MainTitle>
+      <DateText>{weddingConfig.main.date}</DateText>
+      <VenueText>{weddingConfig.main.venue}</VenueText>
+      {}
+      <HiddenWatermark aria-hidden="true">
+        {watermarkId}
+      </HiddenWatermark>
+    </MainContent>
+      
+    <ScrollIndicator>
+      <i className="fas fa-chevron-down"></i>
+    </ScrollIndicator>
+
   </MainSectionContainer>
   );
 };
@@ -200,7 +202,7 @@ const HiddenPlayerWrapper = styled.div`
   position: absolute;
   top: 12px;
   left: 12px;
-  opacity: 0.1;
+  opacity: 0.05;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -229,7 +231,7 @@ const PlayButton = styled.button<{ $isPlaying: boolean }>`
   height: 32px;
   border-radius: 50%;
   border: none;
-  background: #777; /* 투명 배경 */
+  background: #777; /* 어두운 배경 */
   color: white;
   display: flex;
   align-items: center;
