@@ -247,7 +247,7 @@ const HiddenPlayButton = styled.button<{ $isPlaying: boolean }>`
   border-radius: 50%;
   border: none;
   background: none; /* 밝은한 포인트 */
-  color: gray;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
