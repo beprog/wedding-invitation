@@ -9,14 +9,10 @@ import SnowEffect from './SnowEffect';
 const watermarkId = weddingConfig.meta._jwk_watermark_id || 'JWK-NonCommercial';
 
 const MainSection: React.FC = () => {
-  // const audioRef = useRef<HTMLAudioElement | null>(null);
   // 1. 오디오 Ref 2개 생성
-  const mainAudioRef = useRef<HTMLAudioElement | null>(null);
   const hiddenAudioRef = useRef<HTMLAudioElement | null>(null);
-
-  // const [isPlaying, setIsPlaying] = useState(false);
-  // const [progress, setProgress] = useState(0);
-
+  const mainAudioRef = useRef<HTMLAudioElement | null>(null);
+  
   // 2. 각각의 재생 상태 관리
   const [isMainPlaying, setIsMainPlaying] = useState(false);
   const [isHiddenPlaying, setIsHiddenPlaying] = useState(false);
