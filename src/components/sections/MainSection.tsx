@@ -103,7 +103,7 @@ const MainSection: React.FC = () => {
     <MainPlayerWrapper>
       <audio
         // Callback Ref를 사용하여 객체의 main 키에 할당
-        ref={(el) => (audioRefs.current.main = el)}
+        ref={(el) => { audioRefs.current.main = el; }} // 수정됨
         src={weddingConfig.main.backgroundMusic}
         onEnded={() => setIsMainPlaying(false)}
       />
@@ -131,7 +131,7 @@ const MainSection: React.FC = () => {
     <HiddenPlayerWrapper>
       <audio
         // Callback Ref를 사용하여 객체의 hidden 키에 할당
-        ref={(el) => (audioRefs.current.hidden = el)}
+        ref={(el) => { audioRefs.current.hidden = el; }} // 수정됨
         src={weddingConfig.main.hiddenMusic}
         onEnded={() => setIsHiddenPlaying(false)}
       />
