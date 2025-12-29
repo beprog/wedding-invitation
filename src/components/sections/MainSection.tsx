@@ -231,7 +231,7 @@ const PlayButton = styled.button<{ $isPlaying: boolean }>`
   height: 32px;
   border-radius: 50%;
   border: none;
-  background: #333; /* 어두운 배경 */
+  background: #ccc; /* 어두운 배경 */
   color: white;
   display: flex;
   align-items: center;
