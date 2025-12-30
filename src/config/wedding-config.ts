@@ -88,7 +88,7 @@ export const weddingConfig = {
       "/images/gallery/12.coupleinblack_800px.webp",
       "/images/gallery/13.bookmonent.webp",
       "/images/gallery/14.fireworks-animated.gif",
-      "/images/gallery/15,thankyoudance.webp,
+      "/images/gallery/15,thankyoudance.webp",
     ],
   } as GalleryConfig,
 
