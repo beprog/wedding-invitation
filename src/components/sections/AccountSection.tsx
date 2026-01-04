@@ -323,30 +323,30 @@ const AccountRowInfo = styled.div`
   flex: 1;
   justify-content: center;
   align-items: flex-start;
-  gap: 0.1rem;
+  gap: 0.2rem;
   min-width: 0;
 `;
 
 const AccountBank = styled.div`
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   color: var(--text-medium);
   white-space: nowrap;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   line-height: 1.3;
   @media (max-width: 580px) {
-    font-size: 0.9rem;
+    font-size: 1.0rem;
   }
 `;
 
 const AccountNumber = styled.div`
   font-weight: 500;
-  font-size: clamp(0.95rem, 4vw, 1.1rem);
+  font-size: clamp(1.1rem, 4vw, 1.3rem);
   color: var(--text-dark);
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   line-height: 1.3;
   word-break: break-all;
   @media (max-width: 580px) {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
   }
 `;
 
