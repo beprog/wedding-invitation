@@ -331,22 +331,22 @@ const AccountBank = styled.div`
   font-size: 0.95rem;
   color: var(--text-medium);
   white-space: nowrap;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   line-height: 1.3;
   @media (max-width: 580px) {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
   }
 `;
 
 const AccountNumber = styled.div`
   font-weight: 500;
-  font-size: clamp(0.7rem, 4vw, 1.1rem);
+  font-size: clamp(0.95rem, 4vw, 1.1rem);
   color: var(--text-dark);
   font-size: 0.95rem;
   line-height: 1.3;
   word-break: break-all;
   @media (max-width: 580px) {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
   }
 `;
 
