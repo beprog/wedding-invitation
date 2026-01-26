@@ -75,6 +75,8 @@ export const weddingConfig = {
     layout: "scroll" as GalleryLayout, // "scroll" 또는 "grid" 선택
     position: "bottom" as GalleryPosition, // "middle" (현재 위치) 또는 "bottom" (맨 하단) 선택
     images: [
+      "/images/gallery/16.thankcard_ring.jpg",
+      "/images/gallery/17.thnakcard_kiss.jpg",
       "/images/gallery/01.weddingday.webp",
       "/images/gallery/02.forest_800px.webp",
       "/images/gallery/03.kiss_800px.webp",
