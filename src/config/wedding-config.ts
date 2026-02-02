@@ -25,7 +25,8 @@ export const weddingConfig = {
     title: "Wedding Invitation",
     image: "/images/invitation-intro-20fps.webp",
     //backgroundMusic: "/music/No_Words_Can_Say__Roy_Kim.mp3",  // 배경음악 식전
-    backgroundMusic: "/music/Another_Day_Of_Sun.mp3",  // 배경음악 식후
+    //backgroundMusic: "/music/Another_Day_Of_Sun.mp3",  // 배경음악 식후
+    backgroundMusic: "/music/My_GRASS.mp3",  // 배경음악 식후
     hiddenMusic: "/music/aloha.mp3",  // 배경음악 추가
     //hiddenMusic: "/music/Another_Day_Of_Sun.mp3",  // 배경음악 추가
     date: "2026년 1월 25일 일요일 10시 50분",
